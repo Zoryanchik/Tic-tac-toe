@@ -1,0 +1,163 @@
+/* body - This targets the entire body of your page */
+body {
+    /* display: flex; - Flexbox is a layout system. Think of it as turning the body into a flexible container that can arrange things easily */
+    display: flex;
+    /* justify-content: center; - Centers content horizontally (left to right) */
+    justify-content: center;
+    /* align-items: center; - Centers content vertically (top to bottom) */
+    align-items: center;
+    /* min-height: 100vh; - Makes the body at least 100% of the viewport height (vh = viewport height). This ensures the body fills the whole screen */
+    min-height: 100vh;
+    /* margin: 0; - Removes default spacing around the edges */
+    margin: 0;
+    /* font-family: Arial, sans-serif; - Sets the font for all text to Arial */
+    font-family: Arial, sans-serif;
+    /* background-color: #f0f0f0; - Light gray background color. The #f0f0f0 is a hex code (a way to specify colors) */
+    background-color: #6e4949;
+}
+
+/* .game-container - This targets the main game container that holds all the game content */
+.container {
+    /* background-color: white; - Sets the background to white for contrast */
+    background-color: rgb(148, 131, 76);
+    /* padding: 30px; - Adds 30px of space inside the container on all sides */
+    padding: 50px;
+    /* border-radius: 15px; - Rounds the corners of the container */
+    border-radius: 15px;
+    /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); - Adds a subtle shadow for depth (0 = horizontal offset, 4px = vertical offset, 6px = blur, 0.1 = opacity) */
+    box-shadow: 0 4px 6px rgba(226, 9, 9, 0.1);
+    /* text-align: center; - Centers all text inside the container */
+    text-align: center;
+    /* max-width: 500px; - Limits the container width to a maximum of 500 pixels */
+    max-width: 700px;
+}
+
+.container h1 {
+    /* margin-bottom: 20px; - Adds space below the heading */
+    margin-bottom: 20px;
+    /* color: #110101; - Dark color for the heading text */
+    color: #110101;
+}
+
+.container p {
+    /* margin-bottom: 15px; - Adds space below each paragraph */
+    margin-bottom: 15px;
+    /* color: #000000; - Black color for paragraph text */
+    color: #000000;
+}
+
+.game-board {
+    /* display: grid; - Uses CSS Grid layout system to arrange items in rows and columns */
+    display: grid;
+    /* grid-template-columns: repeat(3, 1fr); - Creates 3 equal-width columns for the tic-tac-toe board */
+    grid-template-columns: repeat(3, 1fr);
+    /* gap: 15px; - Adds 15px spacing between grid items */
+    gap: 15px;
+    /* margin: 20px auto; - Adds 20px margin on top/bottom and centers horizontally */
+    margin: 10px auto;
+    /* max-width: 300px; - Limits the board to a maximum width of 300 pixels */
+    max-width: 500px;
+}
+
+.square {
+    /* width: 100%; - Makes each square take up 100% of its grid cell width */
+    width: 100%;
+    /* aspect-ratio: 1; - Keeps squares as perfect squares (width = height) */
+    aspect-ratio: 1;
+    /* font-size: 2rem; - Sets large text size for X or O */
+    font-size: 2rem;
+    /* font-weight: bold; - Makes the text bold */
+    font-weight: bold;
+    /* background-color: #fff; - White background for each square */
+    background-color: #3f2638;
+    /* border: 2px solid #ddd; - Adds a light gray border around each square */
+    border: 2px solid #a3a51d;
+    /* border-radius: 8px; - Slightly rounds the corners of the squares */
+    border-radius: 8px;
+    /* cursor: pointer; - Changes cursor to a pointer to indicate it's clickable */
+    cursor: pointer;
+    /* transition: all 0.3s ease; - Smoothly animates any property changes over 0.3 seconds */
+    transition: all 0.3s ease;
+    /* display: flex; - Uses flexbox to center content inside the square */
+    display: flex;
+    /* justify-content: center; - Centers content horizontally */
+    justify-content: center;
+    /* align-items: center; - Centers content vertically */
+    align-items: center;
+}
+
+.square:hover {
+    background-color: #491755;
+    border-color: #af3a3a;
+    transform: scale(1.05);
+}
+
+.status {
+    /* margin-top: 20px; - Adds space above the status message */
+    margin-top: 20px;
+    /* font-size: 1.2rem; - Slightly larger text for visibility */
+    font-size: 1.2rem;
+    /* color: #333; - Dark gray color for the status text */
+    color: #333;
+}
+
+#status {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 15px;
+}
+/* #status-text - This targets the specific status text element */
+#status-text {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #a82e2e;
+    margin-bottom: 15px;
+}
+
+#reset-button {
+    /* margin-top: 20px; - Adds space above the reset button */
+    margin-top: 20px;
+    /* padding: 10px 20px; - Adds padding inside the button (10px top/bottom, 20px left/right) */
+    padding: 10px 20px;
+    /* font-size: 1rem; - Sets a readable font size for the button */
+    font-size: 1rem;
+    /* background-color: #007BFF; - Blue background color for the button */
+    background-color: #007BFF;
+    /* color: white; - White text color for contrast */
+    color: white;
+    /* border: none; - Removes default border */
+    border: none;
+    /* border-radius: 5px; - Rounds the corners of the button */
+    border-radius: 5px;
+    /* cursor: pointer; - Changes cursor to pointer to indicate it's clickable */
+    cursor: pointer;
+    /* transition: background-color 0.3s ease; - Smoothly animates background color changes */
+    transition: background-color 0.3s ease;
+}
+
+#reset-button:hover {
+    background-color: #45a049;
+}
+
+@media (max-width: 600px) {
+    /* Adjusts game container for smaller screens */
+    .game-container {
+        /* max-width: 90vw; - Container takes up 90% of viewport width on small screens */
+        max-width: 90vw;
+        /* padding: 20px; - Reduces padding to save space on small screens */
+        padding: 20px;
+    }
+    
+    /* Adjusts game board for smaller screens */
+    .board {
+        /* max-width: 80vw; - Board takes up 80% of viewport width on small screens */
+        max-width: 80vw;
+    }
+    
+    /* Reduces font size for game squares on smaller screens */
+    .square {
+        /* font-size: 1.5rem; - Reduces X/O text size on mobile devices */
+        font-size: 1.5rem;
+    }
+}
