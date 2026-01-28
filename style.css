@@ -100,7 +100,7 @@ body {
     /* color: #333; - Dark gray color for the status text */
     color: #333;
 }
-
+/* #status - This targets the specific status element, the diff btw . and # is that . targets classes while # targets IDs */
 #status {
     font-size: 1.2rem;
     font-weight: bold;
