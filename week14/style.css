@@ -1,0 +1,14 @@
+body {
+font-family: Arial, sans-serif;
+}
+.colorChange {
+font-size: 18px;
+margin: 5px 0;
+}
+.btn {
+margin: 5px;
+padding: 10px;
+}
+#toggleText{
+display: block;
+}
