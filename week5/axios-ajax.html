@@ -1,0 +1,36 @@
+<!--Adapted from https://www.w3schools.com/xml/ajax_php.asp -->
+<html>
+
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>
+        //this function is called every time the user types in the input field. It sends a GET request to our node.js app with the URL encoded parameter and updates the page with the response.
+        function showHint(str) {
+            if (str.length == 0) {
+                document.getElementById("txtHint").innerHTML = "";
+                return;
+            } else {
+                //Send a GET to our node.js app including the URL encoded parameter
+                axios.get('http://127.0.0.1:3000/tictactoe?board=' + str)
+                    .then(function (response) { // handle success
+                        console.log("AXIOS SUCCESS-> " + response.data); // log the response to the console for debugging
+                        document.getElementById("txtHint").innerHTML = response.data; // update the page with the response data
+                    })
+                    .catch(function (error) { // handle error
+                        console.log("AXIOS ERROR-> " + error); // log the error to the console for debugging
+                        document.getElementById("txtHint").innerHTML = error; // update the page with the error message
+                    })
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <p><b>Start typing a board configuration in the input field below:</b></p>
+    <form>
+        Board: <input type="text" onkeyup="showHint(this.value)">
+    </form>
+    <p>Suggestions: <span id="txtHint"></span></p>
+</body>
+
+</html>
